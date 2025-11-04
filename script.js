@@ -1,3 +1,36 @@
+// Device detection and performance utilities
+const isMobile = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+        window.innerWidth <= 768 ||
+        'ontouchstart' in window;
+};
+
+const isLowEndDevice = () => {
+    return navigator.hardwareConcurrency <= 2 ||
+        navigator.deviceMemory <= 2;
+};
+
+// Performance optimization: Reduce particles on mobile
+const getParticleCount = () => {
+    if (isMobile() || isLowEndDevice()) {
+        return 15; // Reduced from 50
+    }
+    return 50;
+};
+
+// Debounce utility for scroll events
+const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
+
 // Configuration object for editable content
 const defaultConfig = {
     hero_name: "Harshal Lathiya",
@@ -91,47 +124,63 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Particle System
+// Lazy load particle system for mobile performance
 function createParticles() {
     const particlesContainer = document.getElementById("particles");
-    const particleCount = 50;
+    if (!particlesContainer) return;
 
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement("div");
-        particle.className = "particle";
-        particle.style.left = Math.random() * 100 + "%";
-        particle.style.animationDelay = Math.random() * 20 + "s";
-        particle.style.animationDuration = Math.random() * 10 + 15 + "s";
+    const particleCount = getParticleCount();
 
-        // Random colors for particles
-        const colors = [
-            "#ff006e",
-            "#8338ec",
-            "#3a86ff",
-            "#06ffa5",
-            "#ffffff",
-        ];
-        particle.style.background =
-            colors[Math.floor(Math.random() * colors.length)];
-        particle.style.boxShadow = `0 0 10px ${colors[Math.floor(Math.random() * colors.length)]
-            }`;
-
-        particlesContainer.appendChild(particle);
+    // Progressive enhancement: Skip particles on very low-end devices
+    if (isLowEndDevice() && navigator.deviceMemory <= 1) {
+        return;
     }
+
+    // Use requestAnimationFrame for better performance
+    requestAnimationFrame(() => {
+        const fragment = document.createDocumentFragment();
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement("div");
+            particle.className = "particle";
+            particle.style.left = Math.random() * 100 + "%";
+            particle.style.animationDelay = Math.random() * 20 + "s";
+            particle.style.animationDuration = Math.random() * 10 + 15 + "s";
+
+            // Random colors for particles
+            const colors = [
+                "#ff006e",
+                "#8338ec",
+                "#3a86ff",
+                "#06ffa5",
+                "#ffffff",
+            ];
+            particle.style.background =
+                colors[Math.floor(Math.random() * colors.length)];
+            particle.style.boxShadow = `0 0 10px ${colors[Math.floor(Math.random() * colors.length)]
+                }`;
+
+            fragment.appendChild(particle);
+        }
+
+        particlesContainer.appendChild(fragment);
+    });
 }
 
-// Loading animation
+// Loading animation with dynamic timing based on device capabilities
 window.addEventListener('load', function () {
     const loadingOverlay = document.getElementById('loading');
     if (loadingOverlay) {
-        // Add a small delay for better UX
+        // Dynamic delay based on device performance
+        const delay = isLowEndDevice() ? 200 : isMobile() ? 300 : 500;
+
         setTimeout(() => {
             loadingOverlay.classList.add('hidden');
             // Remove from DOM after animation
             setTimeout(() => {
                 loadingOverlay.remove();
             }, 500);
-        }, 500);
+        }, delay);
     }
 });
 
@@ -162,16 +211,32 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
-// Scroll animations
+// Optimized scroll animations with reduced threshold for mobile
 const observerOptions = {
-    threshold: 0.1,
+    threshold: isMobile() ? 0.05 : 0.1, // Lower threshold on mobile for better performance
     rootMargin: "0px 0px -50px 0px",
+};
+
+// Batch DOM updates for better performance
+let animationQueue = [];
+let animationFrameId = null;
+
+const processAnimationQueue = () => {
+    animationQueue.forEach(entry => {
+        entry.target.classList.add("visible");
+    });
+    animationQueue = [];
+    animationFrameId = null;
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            // Use requestAnimationFrame for batched updates
+            animationQueue.push(entry);
+            if (!animationFrameId) {
+                animationFrameId = requestAnimationFrame(processAnimationQueue);
+            }
         }
     });
 }, observerOptions);
@@ -390,12 +455,22 @@ document
 
 // Social links now work properly - they redirect to actual profiles
 
-// Enhanced parallax and scroll effects
-window.addEventListener("scroll", () => {
+// Enhanced parallax and scroll effects with performance optimization
+const handleScroll = debounce(() => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector(".hero");
     const orbs = document.querySelectorAll(".orb");
     const navbar = document.querySelector(".navbar");
+
+    // Performance: Skip heavy animations on mobile/low-end devices
+    if (isMobile() || isLowEndDevice()) {
+        // Only update navbar glow on mobile
+        if (navbar) {
+            const opacity = Math.min(scrolled / 100, 1);
+            navbar.style.boxShadow = `0 8px 32px rgba(99, 102, 241, ${0.3 * opacity})`;
+        }
+        return;
+    }
 
     // Hero parallax
     if (hero) {
@@ -405,36 +480,74 @@ window.addEventListener("scroll", () => {
     // Orb parallax with different speeds
     orbs.forEach((orb, index) => {
         const speed = 0.1 + index * 0.05;
-        orb.style.transform = `translate(${Math.sin(scrolled * 0.001 + index) * 20
-            }px, ${scrolled * speed}px)`;
+        orb.style.transform = `translate(${Math.sin(scrolled * 0.001 + index) * 20}px, ${scrolled * speed}px)`;
     });
 
     // Navbar glow effect on scroll
     if (navbar) {
         const opacity = Math.min(scrolled / 100, 1);
-        navbar.style.boxShadow = `0 8px 32px rgba(99, 102, 241, ${0.3 * opacity
-            })`;
+        navbar.style.boxShadow = `0 8px 32px rgba(99, 102, 241, ${0.3 * opacity})`;
     }
 
     // Particle movement based on scroll
     const particles = document.querySelectorAll(".particle");
     particles.forEach((particle, index) => {
         const speed = 0.02 + (index % 5) * 0.01;
-        particle.style.transform = `translateX(${Math.sin(scrolled * speed + index) * 10
-            }px)`;
+        particle.style.transform = `translateX(${Math.sin(scrolled * speed + index) * 10}px)`;
     });
+}, 16); // ~60fps
+
+window.addEventListener("scroll", handleScroll, { passive: true });
+
+// Progressive enhancement: Add hover effects only on non-touch devices
+if (!isMobile()) {
+    document.querySelectorAll(".skill-item").forEach((item) => {
+        item.addEventListener("mouseenter", function () {
+            this.style.transform = "translateX(10px)";
+        });
+
+        item.addEventListener("mouseleave", function () {
+            this.style.transform = "translateX(0)";
+        });
+    });
+}
+
+// Basic performance monitoring
+const performanceMetrics = {
+    loadTime: 0,
+    fps: 0,
+    memoryUsage: 0
+};
+
+// Track load time
+window.addEventListener('load', () => {
+    performanceMetrics.loadTime = performance.now();
+    console.log(`Page load time: ${performanceMetrics.loadTime.toFixed(2)}ms`);
 });
 
-// Add hover effects to skill items
-document.querySelectorAll(".skill-item").forEach((item) => {
-    item.addEventListener("mouseenter", function () {
-        this.style.transform = "translateX(10px)";
-    });
+// Basic FPS monitoring (optional, can be disabled on low-end devices)
+if (!isLowEndDevice()) {
+    let frameCount = 0;
+    let lastTime = performance.now();
 
-    item.addEventListener("mouseleave", function () {
-        this.style.transform = "translateX(0)";
-    });
-});
+    const measureFPS = () => {
+        frameCount++;
+        const currentTime = performance.now();
+
+        if (currentTime - lastTime >= 1000) {
+            performanceMetrics.fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
+            frameCount = 0;
+            lastTime = currentTime;
+
+            // Log FPS every second (can be removed in production)
+            console.log(`FPS: ${performanceMetrics.fps}`);
+        }
+
+        requestAnimationFrame(measureFPS);
+    };
+
+    requestAnimationFrame(measureFPS);
+}
 
 (function () {
     function c() {

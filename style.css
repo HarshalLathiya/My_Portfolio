@@ -41,6 +41,9 @@ body {
             border-radius: 50%;
             animation: float-particles 20s infinite linear;
             opacity: 0.6;
+            /* Performance optimization: Use transform for better GPU acceleration */
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         @keyframes float-particles {
@@ -1161,6 +1164,54 @@ body {
         body.dark-mode .timeline-item {
             background: #2d2d2d;
             color: white;
+        }
+
+        /* Mobile Performance Optimizations */
+        @media (max-width: 768px) {
+            /* Reduce backdrop filter blur for better performance */
+            .navbar {
+                backdrop-filter: blur(10px);
+            }
+
+            .skill-category,
+            .project-card,
+            .contact-form {
+                backdrop-filter: blur(5px);
+            }
+
+            /* Simplify box-shadows on mobile */
+            .navbar {
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .skill-category,
+            .project-card {
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            }
+
+            .cta-button:hover,
+            .profile-card:hover,
+            .skill-category:hover,
+            .project-card:hover {
+                /* Reduce transform complexity on mobile */
+                transform: translateY(-5px) scale(1.02);
+            }
+
+            /* Disable complex animations on mobile */
+            .orb {
+                animation: none;
+            }
+
+            .profile-avatar {
+                animation: none;
+            }
+
+            /* Simplify gradient animations */
+            .logo,
+            .section-title,
+            .cta-button {
+                animation-duration: 6s; /* Slower animation for better performance */
+            }
         }
 
         /* Responsive Design */
