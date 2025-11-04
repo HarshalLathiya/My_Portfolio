@@ -1215,7 +1215,7 @@ body {
         }
 
         /* Responsive Design */
-        @media (max-width: 1200px) {
+        @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
