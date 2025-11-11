@@ -477,11 +477,13 @@ const handleScroll = debounce(() => {
         hero.style.transform = `translateY(${scrolled * 0.3}px)`;
     }
 
-    // Orb parallax with different speeds
-    orbs.forEach((orb, index) => {
-        const speed = 0.1 + index * 0.05;
-        orb.style.transform = `translate(${Math.sin(scrolled * 0.001 + index) * 20}px, ${scrolled * speed}px)`;
-    });
+    // Orb parallax with different speeds - skip if orbs are hidden
+    if (orbs.length > 0 && !isMobile()) {
+        orbs.forEach((orb, index) => {
+            const speed = 0.1 + index * 0.05;
+            orb.style.transform = `translate(${Math.sin(scrolled * 0.001 + index) * 20}px, ${scrolled * speed}px)`;
+        });
+    }
 
     // Navbar glow effect on scroll
     if (navbar) {
@@ -489,12 +491,14 @@ const handleScroll = debounce(() => {
         navbar.style.boxShadow = `0 8px 32px rgba(99, 102, 241, ${0.3 * opacity})`;
     }
 
-    // Particle movement based on scroll
+    // Particle movement based on scroll - skip if particles are hidden
     const particles = document.querySelectorAll(".particle");
-    particles.forEach((particle, index) => {
-        const speed = 0.02 + (index % 5) * 0.01;
-        particle.style.transform = `translateX(${Math.sin(scrolled * speed + index) * 10}px)`;
-    });
+    if (particles.length > 0 && !isMobile()) {
+        particles.forEach((particle, index) => {
+            const speed = 0.02 + (index % 5) * 0.01;
+            particle.style.transform = `translateX(${Math.sin(scrolled * speed + index) * 10}px)`;
+        });
+    }
 }, 16); // ~60fps
 
 window.addEventListener("scroll", handleScroll, { passive: true });

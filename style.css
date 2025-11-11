@@ -1189,10 +1189,19 @@ body {
                 box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
             }
 
-            .cta-button:hover,
-            .profile-card:hover,
-            .skill-category:hover,
+            /* Disable complex hover animations on mobile for better performance */
+            .skill-category:hover {
+                transform: none;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            }
+
             .project-card:hover {
+                transform: none;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            }
+
+            .cta-button:hover,
+            .profile-card:hover {
                 /* Reduce transform complexity on mobile */
                 transform: translateY(-5px) scale(1.02);
             }
@@ -1200,6 +1209,12 @@ body {
             /* Disable complex animations on mobile */
             .orb {
                 animation: none;
+                display: none; /* Hide orbs completely on mobile */
+            }
+
+            .particle {
+                animation: none;
+                display: none; /* Hide particles completely on mobile */
             }
 
             .profile-avatar {
@@ -1211,6 +1226,18 @@ body {
             .section-title,
             .cta-button {
                 animation-duration: 6s; /* Slower animation for better performance */
+            }
+
+            /* Disable will-change for better performance */
+            .skill-category,
+            .project-card,
+            .particle {
+                will-change: auto;
+            }
+
+            /* Reduce animation complexity for skill items */
+            .skill-item {
+                transition: none;
             }
         }
 
