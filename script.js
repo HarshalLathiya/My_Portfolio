@@ -1,8 +1,8 @@
 // Device detection and performance utilities
 const isMobile = () => {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+    return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent) ||
         window.innerWidth <= 768 ||
-        'ontouchstart' in window;
+        navigator.maxTouchPoints > 0;
 };
 
 const isLowEndDevice = () => {
@@ -34,7 +34,7 @@ const debounce = (func, wait) => {
 // Configuration object for editable content
 const defaultConfig = {
     hero_name: "Harshal Lathiya",
-    hero_tagline: "BCA Student | Freelancer Developer | Tech Enthusiast",
+    hero_tagline: " IT Student | Freelance Developer ",
     hero_cta: "View My Work",
     about_description:
         "Passionate BCA student with expertise in web development and a strong foundation in programming languages. I specialize in creating responsive, user-friendly applications using modern technologies. With experience in both frontend and backend development, I enjoy solving complex problems and bringing innovative ideas to life through code.",
@@ -398,10 +398,47 @@ mobileMenu.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
 });
 
+// Close mobile menu when clicking on a nav link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove("active");
+        mobileMenu.classList.remove("active");
+    });
+});
+
 // Add mobile menu styles
 const mobileStyles = document.createElement("style");
 mobileStyles.textContent = `
+            .mobile-menu {
+                display: none;
+                cursor: pointer;
+                z-index: 1001;
+                position: relative;
+                padding: 5px;
+            }
+
             @media (max-width: 1200px) {
+                .mobile-menu {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    width: 30px;
+                    height: 30px;
+                    padding: 5px;
+                    background: transparent;
+                    border: none;
+                }
+
+                .mobile-menu span {
+                    display: block;
+                    width: 100%;
+                    height: 3px;
+                    background: var(--text-color, #333);
+                    transition: all 0.3s ease;
+                    border-radius: 2px;
+                    transform-origin: center;
+                }
+
                 .nav-menu {
                     position: fixed;
                     top: 70px;
@@ -415,6 +452,7 @@ mobileStyles.textContent = `
                     align-items: center;
                     padding-top: 2rem;
                     transition: right 0.3s ease;
+                    z-index: 1000;
                 }
 
                 .nav-menu.active {
@@ -423,6 +461,13 @@ mobileStyles.textContent = `
 
                 .nav-menu li {
                     margin: 1rem 0;
+                }
+
+                .nav-menu li a {
+                    font-size: 1.2rem;
+                    padding: 10px 20px;
+                    width: 100%;
+                    text-align: center;
                 }
 
                 .mobile-menu.active span:nth-child(1) {
