@@ -558,6 +558,10 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('%c🚀 Harshal Lathiya Portfolio', 'color: #2563eb; font-size: 18px; font-weight: bold;');
     console.log('%cThanks for checking out my portfolio!', 'color: #6b7280;');
     console.log('%cFind the code on GitHub: https://github.com/HarshalLathiya', 'color: #10b981;');
+
+    setTimeout(() => {
+        showNotification('Welcome to my portfolio! Feel free to explore.', 'info');
+    }, 2000);
 });
 
 // ===== WINDOW RESIZE HANDLER =====
