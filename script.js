@@ -545,6 +545,78 @@ function initMobileMenu() {
     }
 }
 
+// ===== PHOTO GALLERY SLIDER =====
+function initPhotoSlider() {
+    const slider = document.querySelector(".slider");
+    const slides = document.querySelectorAll(".slide");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const dotsContainer = document.getElementById("sliderDots");
+
+    if (!slider || !slides.length) return;
+
+    let currentIndex = 0;
+
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll(".dot");
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        goToSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        goToSlide(currentIndex);
+    }
+
+    // Event listeners
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+
+    // Auto-play functionality
+    let autoPlayInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-play on hover
+    const sliderContainer = document.querySelector(".slider-container");
+    sliderContainer.addEventListener("mouseenter", () => {
+        clearInterval(autoPlayInterval);
+    });
+
+    sliderContainer.addEventListener("mouseleave", () => {
+        autoPlayInterval = setInterval(nextSlide, 5000);
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+            prevSlide();
+        } else if (e.key === "ArrowRight") {
+            nextSlide();
+        }
+    });
+}
+
 // ===== INITIALIZE EVERYTHING =====
 document.addEventListener('DOMContentLoaded', () => {
     createParticles();
@@ -554,6 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCopyrightYear();
     initHeroNameEffect();
     initMobileMenu();
+    initPhotoSlider();
 
     console.log('%c🚀 Harshal Lathiya Portfolio', 'color: #2563eb; font-size: 18px; font-weight: bold;');
     console.log('%cThanks for checking out my portfolio!', 'color: #6b7280;');
@@ -575,7 +648,7 @@ additionalStyles.textContent = `
     @keyframes slideOutRight {
         from { transform: translateX(0); opacity: 1; }
         to { transform: translateX(100%); opacity: 0; }
-    }
+    
     
     .notification-close {
         background: none;
