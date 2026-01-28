@@ -1363,8 +1363,8 @@ html:not([data-theme]) .project-card {
   }
 
   .dot {
-    min-width: 20x;
-    min-height: 10px;
+    min-width: 5x;
+    min-height: 5px;
     margin: 0 2px;
   }
 }
