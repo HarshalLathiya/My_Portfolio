@@ -6,7 +6,22 @@
     <title>Harshal Lathiya | Portfolio</title>
     <meta
       name="description"
-      content="Harshal Lathiya - BCA Student, Freelancer Developer &amp; Tech Enthusiast. View my projects, skills, and achievements."
+      content="Harshal Lathiya - BCA Student, Freelancer Developer & Tech Enthusiast. View my projects, skills, and achievements."
+    />
+    <meta
+      name="keywords"
+      content="Harshal Lathiya, BCA Student, Freelance Developer, Full Stack Developer, Web Developer, Portfolio, React, Node.js, JavaScript, Python, Java, PHP, MySQL, PostgreSQL, Docker, Git, Amreli, Gujarat, India"
+    />
+    <meta name="author" content="Harshal Lathiya" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://harshallathiya.github.io/portfolio/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://harshallathiya.github.io/portfolio/"
     />
     <meta
       property="og:title"
@@ -16,725 +31,842 @@
       property="og:description"
       content="Professional portfolio showcasing web development projects and skills"
     />
-    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://harshallathiya.github.io/portfolio/gallery/avatar.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://harshallathiya.github.io/portfolio/"
+    />
+    <meta
+      property="twitter:title"
+      content="Harshal Lathiya | Portfolio – Web Developer"
+    />
+    <meta
+      property="twitter:description"
+      content="Professional portfolio showcasing web development projects and skills"
+    />
+    <meta
+      property="twitter:image"
+      content="https://harshallathiya.github.io/portfolio/gallery/avatar.png"
+    />
+
+    <!-- Favicon -->
     <link
       rel="icon"
+      type="image/svg+xml"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>"
     />
+    <link rel="apple-touch-icon" href="gallery/avatar.png" />
+
+    <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Harshal Lathiya",
+        "url": "https://harshallathiya.github.io/portfolio/",
+        "jobTitle": "Full-Stack Developer",
+        "description": "BCA Student and Freelance Developer specializing in web development with React, Node.js, and modern technologies.",
+        "sameAs": [
+          "https://github.com/HarshalLathiya",
+          "https://www.linkedin.com/in/harshal-lathiya-43b577258/",
+          "https://www.youtube.com/@LathiyaHarshal"
+        ],
+        "knowsAbout": [
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "React",
+          "Node.js",
+          "Express.js",
+          "PHP",
+          "Java",
+          "Python",
+          "MySQL",
+          "PostgreSQL",
+          "Docker",
+          "Git"
+        ]
+      }
+    </script>
   </head>
 
   <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Loading Animation with dynamic timing -->
-    <div id="loading" class="loading-overlay">
+    <div
+      id="loading"
+      class="loading-overlay"
+      role="progressbar"
+      aria-label="Loading page"
+    >
       <div class="loading-spinner">
         <div class="spinner"></div>
         <p>Loading...</p>
       </div>
     </div>
     <!-- Particle Background Harshal -->
-    <div class="particles" id="particles"></div>
+    <div class="particles" id="particles" aria-hidden="true"></div>
     <!-- Floating Orbs -->
-    <div class="orb"></div>
-    <div class="orb"></div>
-    <div class="orb"></div>
+    <div class="orb" aria-hidden="true"></div>
+    <div class="orb" aria-hidden="true"></div>
+    <div class="orb" aria-hidden="true"></div>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="nav-container">
-        <a href="#home" class="logo">Harshal Lathiya</a>
+        <a href="#home" class="logo" aria-label="Go to Home">Harshal Lathiya</a>
         <div class="nav-right">
-          <ul class="nav-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#achievements" class="nav-link">Achievements</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+          <ul class="nav-menu" role="menubar">
+            <li role="none">
+              <a href="#home" class="nav-link" role="menuitem">Home</a>
+            </li>
+            <li role="none">
+              <a href="#about" class="nav-link" role="menuitem">About</a>
+            </li>
+            <li role="none">
+              <a href="#skills" class="nav-link" role="menuitem">Skills</a>
+            </li>
+            <li role="none">
+              <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+            </li>
+            <li role="none">
+              <a href="#education" class="nav-link" role="menuitem"
+                >Education</a
+              >
+            </li>
+            <li role="none">
+              <a href="#achievements" class="nav-link" role="menuitem"
+                >Achievements</a
+              >
+            </li>
+            <li role="none">
+              <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+            </li>
           </ul>
 
-          <button class="dark-mode-toggle" id="darkModeToggle">
-            <i class="fas fa-sun"></i>
+          <button
+            class="dark-mode-toggle"
+            id="darkModeToggle"
+            aria-label="Toggle dark/light mode"
+          >
+            <i class="fas fa-sun" aria-hidden="true"></i>
           </button>
         </div>
       </div>
     </nav>
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <h1>Hey, I'm <span id="hero-name">Lathiya Harshal</span></h1>
-          <p class="tagline">
-            <span id="hero-tagline" class="typing-text">
-              IT Student | Freelance Developer
-            </span>
-          </p>
-          <a href="#projects" class="cta-button" id="hero-cta">View My Work</a>
-        </div>
-        <div class="hero-image">
-          <div class="profile-card">
-            <div class="profile-avatar">
-              <img
-                src="gallery/avatar.png"
-                alt="Harshal Lathiya Avatar"
-                loading="lazy"
-                class="profile-img"
-              />
-            </div>
-            <h3 class="profile-name">Harshal Lathiya</h3>
-            <p class="profile-title">Junior Full-Stack Developer</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- About Section -->
-    <section id="about" class="section about">
-      <div class="container">
-        <h2 class="section-title fade-in">About Me</h2>
-        <div class="about-content">
-          <div class="slide-in-left">
-            <p class="about-text" id="about-description">
-              I'm a passionate Freelance Developer who loves turning ideas into
-              smart, responsive, and efficient digital solutions.
-              <br />
-              I believe in clean code, thoughtful design, and continuous
-              improvement. <br />
-              I enjoy tackling new challenges, learning something new every day,
-              and collaborating to bring great projects to life. <br />
-              I'm open to freelance opportunities and tech collaborations —
-              let's connect!
+    <!-- Main Content Area -->
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero-container">
+          <div class="hero-content">
+            <h1 id="hero-title">
+              Hey, I'm <span id="hero-name">Lathiya Harshal</span>
+            </h1>
+            <p class="tagline">
+              <span id="hero-tagline" class="typing-text" aria-live="polite">
+                IT Student | Freelance Developer
+              </span>
             </p>
-            <div class="about-highlights">
-              <div class="highlight-item">
-                <i class="fas fa-code"></i>
-                <h4>Clean Code</h4>
-              </div>
-              <div class="highlight-item">
-                <i class="fas fa-mobile-alt"></i>
-                <h4>Responsive Design</h4>
-              </div>
-              <div class="highlight-item">
-                <i class="fas fa-users"></i>
-                <h4>Team Player</h4>
-              </div>
-            </div>
-          </div>
-          <div class="slide-in-right">
-            <div class="about-stats">
-              <div class="stat-item">
-                <h3>3+</h3>
-                <p>Years of Learning</p>
-              </div>
-              <div class="stat-item">
-                <h3>10+</h3>
-                <p>Projects Completed</p>
-              </div>
-              <div class="stat-item">
-                <h3>5+</h3>
-                <p>Technologies Mastered</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Skills Section -->
-    <section id="skills" class="section skills">
-      <div class="container">
-        <h2 class="section-title fade-in">Skills &amp; Technologies</h2>
-        <div class="skills-grid">
-          <div class="skill-category fade-in">
-            <h3><i class="fas fa-code"></i> Frontend</h3>
-            <div class="skill-item">
-              <i class="fab fa-html5" style="color: #e34c26"></i>
-              <span>HTML5</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-css3-alt" style="color: #1572b6"></i>
-              <span>CSS3</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-js-square" style="color: #f7df1e"></i>
-              <span>JavaScript</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-react" style="color: #61dafb"></i>
-              <span>React</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-bootstrap" style="color: #7952b3"></i>
-              <span>Bootstrap</span>
-            </div>
-          </div>
-          <div class="skill-category fade-in">
-            <h3><i class="fas fa-server"></i> Backend</h3>
-            <div class="skill-item">
-              <i class="fab fa-node-js" style="color: #339933"></i>
-              <span>Node.js</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-code-branch" style="color: #000"></i>
-              <span>Express.js</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-php" style="color: #777bb4"></i> <span>PHP</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-java" style="color: #ed8b00"></i>
-              <span>Java</span>
-            </div>
-          </div>
-          <div class="skill-category fade-in">
-            <h3><i class="fas fa-database"></i> Database</h3>
-            <div class="skill-item">
-              <i class="fas fa-database" style="color: #336791"></i>
-              <span>MySQL</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-database" style="color: #336791"></i>
-              <span>PostgreSQL</span>
-            </div>
-          </div>
-          <div class="skill-category fade-in">
-            <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
-            <div class="skill-item">
-              <i class="fab fa-google" style="color: #4285f4"></i>
-              <span>Google Cloud</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-docker" style="color: #2496ed"></i>
-              <span>Docker</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-git-alt" style="color: #f05032"></i>
-              <span>Git</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-github" style="color: #000"></i>
-              <span>GitHub</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-paper-plane" style="color: #ff6b35"></i>
-              <span>Postman</span>
-            </div>
-          </div>
-          <div class="skill-category fade-in">
-            <h3><i class="fas fa-laptop-code"></i> Programming Languages</h3>
-            <div class="skill-item">
-              <i class="fas fa-code" style="color: #00599c"></i>
-              <span>C++</span>
-            </div>
-            <div class="skill-item">
-              <i class="fas fa-c" style="color: #a8b9cc"></i> <span>C</span>
-            </div>
-            <div class="skill-item">
-              <i class="fab fa-python" style="color: #ed8b00"></i>
-              <span>Python</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Projects Section -->
-    <section id="projects" class="section projects">
-      <div class="container">
-        <h2 class="section-title fade-in">Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card fade-in">
-            <div class="project-header">
-              <h3 class="project-title">Tour_Management_System</h3>
-            </div>
-            <div class="project-content">
-              <p class="project-description">
-                A scalable full-stack Tour Management System with role-based
-                access, enabling itinerary planning, per-location attendance
-                tracking, budget transparency, safety management, and post-tour
-                reporting for institutions and organizations.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">React.js</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express.js</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">Next.js</span>
-                <span class="tech-tag">TypeScript</span>
-              </div>
-              <a
-                href="https://github.com/HarshalLathiya/FITGROCER_Grocery_Management_System-.git"
-                class="project-link"
+            <div class="hero-buttons">
+              <a href="#projects" class="cta-button" id="hero-cta"
+                >View My Work</a
               >
-                View on GitHub <i class="fas fa-external-link-alt"></i>
+              <a
+                href="gallery/Harshal_Lathiya_Resume.pdf"
+                class="cta-button resume-button"
+                download
+                aria-label="Download Resume"
+              >
+                <i class="fas fa-download" aria-hidden="true"></i> Download
+                Resume
               </a>
             </div>
           </div>
-          <div class="project-card fade-in">
-            <div class="project-header">
-              <h3 class="project-title">FitGrocer</h3>
-            </div>
-            <div class="project-content">
-              <p class="project-description">
-                A comprehensive grocery management system designed to streamline
-                inventory management, sales tracking, and customer relationship
-                management for retail businesses.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">HTML5</span>
-                <span class="tech-tag">CSS3</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">EJS</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express.js</span>
-              </div>
-              <a
-                href="https://github.com/HarshalLathiya/FITGROCER_Grocery_Management_System-.git"
-                class="project-link"
-              >
-                View on GitHub <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project-card fade-in">
-            <div class="project-header">
-              <h3 class="project-title">BookMyRide</h3>
-            </div>
-            <div class="project-content">
-              <p class="project-description">
-                A complete web-based Car Rental Management System using PHP,
-                MySQL, and Bootstrap. It includes secure authentication, dynamic
-                pricing, full booking flow, and an admin dashboard for managing
-                cars, users, and bookings.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">HTML5</span>
-                <span class="tech-tag">CSS3</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Bootstrap</span>
-                <span class="tech-tag">PHP</span>
-                <span class="tech-tag">MySQL</span>
-              </div>
-              <a
-                href="https://github.com/HarshalLathiya/BookMyRide.git"
-                class="project-link"
-              >
-                View on GitHub <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project-card fade-in">
-            <div class="project-header">
-              <h3 class="project-title">Simon Game Challenge</h3>
-            </div>
-            <div class="project-content">
-              <p class="project-description">
-                This project is a fun memory-based game inspired by the classic
-                Simon — built using HTML, CSS, and JavaScript. It helped me
-                strengthen my understanding of: DOM manipulation. Event handling
-                and sequences. Basic Game logic in JS.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">HTML</span>
-                <span class="tech-tag">CSS</span>
-                <span class="tech-tag">JavaScript</span>
-              </div>
-              <a
-                href="https://github.com/HarshalLathiya/Simon_Game_Challenge.git"
-                class="project-link"
-              >
-                View on GitHub <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project-card fade-in">
-            <div class="project-header">
-              <h3 class="project-title">PixelCraft Portfolio</h3>
-            </div>
-            <div class="project-content">
-              <p class="project-description">
-                This fully responsive site showcases my best shots in
-                categorized galleries. The website serves as a creative
-                portfolio and demonstrates both my technical web development
-                skills and artistic photography work.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">HTML5</span>
-                <span class="tech-tag">CSS3</span>
-                <span class="tech-tag">Bootstrap</span>
-                <span class="tech-tag">JavaScript</span>
-              </div>
-              <a
-                href="https://github.com/HarshalLathiya/Bootstrap.git"
-                class="project-link"
-              >
-                View on GitHub <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project-card fade-in">
-            <div class="project-header">
-              <h3 class="project-title">QR Code Generator</h3>
-            </div>
-            <div class="project-content">
-              <p class="project-description">
-                A dynamic QR code generation application built with Node.js that
-                allows users to create custom QR codes for various purposes
-                including URLs, text, and contact information.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">HTML5</span>
-                <span class="tech-tag">CSS3</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">React.js</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express.js</span>
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">QR Library</span>
-              </div>
-              <a
-                href="https://github.com/HarshalLathiya/QR_Code_Project_"
-                class="project-link"
-              >
-                View on GitHub <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Education Section -->
-    <section id="education" class="section education">
-      <div class="container">
-        <h2 class="section-title fade-in">Education</h2>
-        <div class="timeline">
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              🎓 Bachelor of Computer Applications (BCA)
-            </h3>
-            <h4 class="timeline-subtitle">
-              Kamani Science & Prataprai Arts College, Amreli – 6th Semester
-              (2025)
-            </h4>
-            <p class="timeline-description">
-              Currently pursuing a Bachelor of Computer Applications (BCA) at
-              Kamani Science & Prataprai Arts College, Amreli — affiliated with
-              Saurashtra University.<br />
-              Maintaining strong academic performance with 75%+ results and
-              continuously working on personal growth and technical excellence.
-            </p>
-            <div class="tags-container">
-              <span class="tag">Web Development</span>
-              <span class="tag">App Development</span>
-              <span class="tag">Personal Growth</span>
-              <span class="tag">Continuous Learning</span>
-            </div>
-          </div>
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              📘 Higher Secondary Education (12th Science)
-            </h3>
-            <h4 class="timeline-subtitle">
-              Navnit School of Science, Amreli – GSHSEB (2022)
-            </h4>
-            <p class="timeline-description">
-              Completed 12th Science with 65%, building a strong foundation in
-              Mathematics, Physics, and Computer Science. JEE Score: 66.659 ·
-              Qualified JEE (NTA) with higher performance in Mathematics (78.72)
-              and Physics (73.11).
-            </p>
-            <div class="tags-container">
-              <span class="tag">Mathematics</span>
-              <span class="tag">Physics</span>
-              <span class="tag">Computer Science</span>
-              <span class="tag">JEE</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Achievements Section -->
-    <section id="achievements" class="section achievements">
-      <div class="container">
-        <h2 class="section-title fade-in">Achievements &amp; Recognition</h2>
-        <div class="timeline">
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-trophy"></i> Ranker & Achievement Felicitation —
-              Gajera Campus
-            </h3>
-          </div>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Google Analytics Certification - Google
-            </h3>
-            <p class="timeline-description">
-              Certified by Google for mastering web analytics, traffic insights,
-              and performance measurement to improve digital marketing
-              strategies.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Google Analytics</span>
-              <span class="tag tag-accent">Web Analytics</span>
-              <span class="tag tag-accent">Data Analysis</span>
-            </div>
-          </div>
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-trophy"></i> 2nd Rank – State-Level Photography
-              Competition - NYKS India
-            </h3>
-            <p class="timeline-description">
-              Secured 2nd position at a state-level photography contest for
-              outstanding creativity and technical excellence in visual
-              storytelling.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Photography</span>
-              <span class="tag tag-accent">Visual Arts</span>
-              <span class="tag tag-accent">Gandhinagar</span>
-            </div>
-          </div>
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Introduction to programming Using Python Certification —
-              Geeksforgeeks
-            </h3>
-            <p class="timeline-description">
-              Gained solid foundational knowledge of Python programming and
-              problem-solving techniques through GeeksforGeeks certification.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Python</span>
-              <span class="tag tag-accent">Basic Data Structures</span>
-              <span class="tag tag-accent">Algorithm Design</span>
-            </div>
-          </div>
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Java Skill Up - GeeksforGeeks
-            </h3>
-            <p class="timeline-description">
-              Gained solid foundational knowledge of Java programming and
-              problem-solving techniques through GeeksforGeeks certification.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Java</span>
-              <span class="tag tag-accent">Basic Data Structures</span>
-              <span class="tag tag-accent">JDBC</span>
-            </div>
-          </div>
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-code"></i>
-              Participation in Code-2-Web - RK University
-            </h3>
-            <p class="timeline-description">
-              Showcased innovative web development skills and creativity at RK
-              University's TechnoPlanet 2025 event.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Web Development</span>
-              <span class="tag tag-accent">Competition</span>
-              <span class="tag tag-accent">Innovation</span>
-            </div>
-          </div>
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Spoken English Certification — Expert Spoken English
-            </h3>
-            <p class="timeline-description">
-              Successfully completed the Expert Spoken English course, achieving
-              strong fluency, confidence, and communication skills in English.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Spoken English</span>
-              <span class="tag tag-accent">Active Listening</span>
-              <span class="tag tag-accent">Professional Communication</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Photo Gallery Slider -->
-        <div class="photo-gallery">
-          <h3 class="gallery-title fade-in">Photo Gallery</h3>
-          <div class="slider-container">
-            <div class="slider">
-              <div class="slide">
-                <img
-                  src="gallery/recent_awards.jpg"
-                  alt="Recent Awards"
-                  loading="lazy"
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="gallery/poster_presentation.jpg"
-                  alt="Poster Presentation"
-                  loading="lazy"
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="gallery/teachers_day_award.jpg"
-                  alt="Teachers Day Award"
-                  loading="lazy"
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="gallery/teachers_day.JPG"
-                  alt="Teachers Day"
-                  loading="lazy"
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="gallery/NYKS.jpg"
-                  alt="Photography Award"
-                  loading="lazy"
-                />
-              </div>
-              <div class="slide">
-                <img
-                  src="gallery/RED_WHITE.jpg"
-                  alt="Red White"
-                  loading="lazy"
-                />
-              </div>
-              <div class="slide">
-                <video controls>
-                  <source
-                    src="gallery/teachers_day_SEM_5.MP4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-            <button class="slider-btn prev-btn" id="prevBtn">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-btn next-btn" id="nextBtn">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="slider-dots" id="sliderDots"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2 class="section-title fade-in" id="contact-title">Get In Touch</h2>
-        <div class="contact-content">
-          <div class="contact-form slide-in-left">
-            <form
-              id="contactForm"
-              action="https://formspree.io/f/xeopzvgq"
-              method="POST"
+          <div class="hero-image">
+            <div
+              class="profile-card"
+              role="img"
+              aria-label="Profile picture of Harshal Lathiya"
             >
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your Name"
-                  required
+              <div class="profile-avatar">
+                <img
+                  src="gallery/avatar.png"
+                  alt="Harshal Lathiya Avatar"
+                  loading="eager"
+                  class="profile-img"
                 />
               </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="your.email@example.com"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  placeholder="Your message here..."
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="submit-btn">
-                <i class="fas fa-paper-plane"></i> Send Message
-              </button>
-            </form>
+              <h3 class="profile-name">Harshal Lathiya</h3>
+              <p class="profile-title">Junior Full-Stack Developer</p>
+            </div>
           </div>
-          <div class="contact-info slide-in-right">
-            <div>
-              <h3 class="contact-heading">Let's Connect!</h3>
-              <p class="contact-description">
-                I'm always interested in new opportunities, collaborations, and
-                interesting projects. Whether you have a question or just want
-                to say hi, feel free to reach out!
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="section about">
+        <div class="container">
+          <h2 class="section-title fade-in">About Me</h2>
+          <div class="about-content">
+            <div class="slide-in-left">
+              <p class="about-text" id="about-description">
+                I'm a passionate Freelance Developer who loves turning ideas
+                into smart, responsive, and efficient digital solutions.
+                <br />
+                I believe in clean code, thoughtful design, and continuous
+                improvement. <br />
+                I enjoy tackling new challenges, learning something new every
+                day, and collaborating to bring great projects to life. <br />
+                I'm open to freelance opportunities and tech collaborations —
+                let's connect!
               </p>
-              <div class="social-links">
+              <div class="about-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-code"></i>
+                  <h4>Clean Code</h4>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-mobile-alt"></i>
+                  <h4>Responsive Design</h4>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-users"></i>
+                  <h4>Team Player</h4>
+                </div>
+              </div>
+            </div>
+            <div class="slide-in-right">
+              <div class="about-stats">
+                <div class="stat-item">
+                  <h3>3+</h3>
+                  <p>Years of Learning</p>
+                </div>
+                <div class="stat-item">
+                  <h3>10+</h3>
+                  <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                  <h3>5+</h3>
+                  <p>Technologies Mastered</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Skills Section -->
+      <section id="skills" class="section skills">
+        <div class="container">
+          <h2 class="section-title fade-in">Skills &amp; Technologies</h2>
+          <div class="skills-grid">
+            <div class="skill-category fade-in">
+              <h3><i class="fas fa-code"></i> Frontend</h3>
+              <div class="skill-item">
+                <i class="fab fa-html5" style="color: #e34c26"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-css3-alt" style="color: #1572b6"></i>
+                <span>CSS3</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-js-square" style="color: #f7df1e"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-react" style="color: #61dafb"></i>
+                <span>React</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-bootstrap" style="color: #7952b3"></i>
+                <span>Bootstrap</span>
+              </div>
+            </div>
+            <div class="skill-category fade-in">
+              <h3><i class="fas fa-server"></i> Backend</h3>
+              <div class="skill-item">
+                <i class="fab fa-node-js" style="color: #339933"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-code-branch" style="color: #000"></i>
+                <span>Express.js</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-php" style="color: #777bb4"></i>
+                <span>PHP</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-java" style="color: #ed8b00"></i>
+                <span>Java</span>
+              </div>
+            </div>
+            <div class="skill-category fade-in">
+              <h3><i class="fas fa-database"></i> Database</h3>
+              <div class="skill-item">
+                <i class="fas fa-database" style="color: #336791"></i>
+                <span>MySQL</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-database" style="color: #336791"></i>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+            <div class="skill-category fade-in">
+              <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
+              <div class="skill-item">
+                <i class="fab fa-google" style="color: #4285f4"></i>
+                <span>Google Cloud</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-docker" style="color: #2496ed"></i>
+                <span>Docker</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-git-alt" style="color: #f05032"></i>
+                <span>Git</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-github" style="color: #000"></i>
+                <span>GitHub</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-paper-plane" style="color: #ff6b35"></i>
+                <span>Postman</span>
+              </div>
+            </div>
+            <div class="skill-category fade-in">
+              <h3><i class="fas fa-laptop-code"></i> Programming Languages</h3>
+              <div class="skill-item">
+                <i class="fas fa-code" style="color: #00599c"></i>
+                <span>C++</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-c" style="color: #a8b9cc"></i> <span>C</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-python" style="color: #ed8b00"></i>
+                <span>Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects Section -->
+      <section id="projects" class="section projects">
+        <div class="container">
+          <h2 class="section-title fade-in">Featured Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card fade-in">
+              <div class="project-header">
+                <h3 class="project-title">Tour_Management_System</h3>
+              </div>
+              <div class="project-content">
+                <p class="project-description">
+                  A scalable full-stack Tour Management System with role-based
+                  access, enabling itinerary planning, per-location attendance
+                  tracking, budget transparency, safety management, and
+                  post-tour reporting for institutions and organizations.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">React.js</span>
+                  <span class="tech-tag">PostgreSQL</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Express.js</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">TypeScript</span>
+                </div>
                 <a
-                  href="https://github.com/HarshalLathiya"
-                  class="social-link"
-                  title="GitHub"
+                  href="https://github.com/HarshalLathiya/Tour_Management_System.git"
+                  class="project-link"
                 >
-                  <i class="fab fa-github"></i>
+                  View on GitHub <i class="fas fa-external-link-alt"></i>
                 </a>
+              </div>
+            </div>
+            <div class="project-card fade-in">
+              <div class="project-header">
+                <h3 class="project-title">FitGrocer</h3>
+              </div>
+              <div class="project-content">
+                <p class="project-description">
+                  A comprehensive grocery management system designed to
+                  streamline inventory management, sales tracking, and customer
+                  relationship management for retail businesses.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">EJS</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Express.js</span>
+                </div>
                 <a
-                  href="https://www.linkedin.com/in/harshal-lathiya-43b577258/"
-                  class="social-link"
-                  title="LinkedIn"
+                  href="https://github.com/HarshalLathiya/FITGROCER_Grocery_Management_System-.git"
+                  class="project-link"
                 >
-                  <i class="fab fa-linkedin"></i>
+                  View on GitHub <i class="fas fa-external-link-alt"></i>
                 </a>
+              </div>
+            </div>
+            <div class="project-card fade-in">
+              <div class="project-header">
+                <h3 class="project-title">BookMyRide</h3>
+              </div>
+              <div class="project-content">
+                <p class="project-description">
+                  A complete web-based Car Rental Management System using PHP,
+                  MySQL, and Bootstrap. It includes secure authentication,
+                  dynamic pricing, full booking flow, and an admin dashboard for
+                  managing cars, users, and bookings.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Bootstrap</span>
+                  <span class="tech-tag">PHP</span>
+                  <span class="tech-tag">MySQL</span>
+                </div>
                 <a
-                  href="mailto:harshalplathiya@gmail.com"
-                  class="social-link"
-                  title="Email"
+                  href="https://github.com/HarshalLathiya/BookMyRide.git"
+                  class="project-link"
                 >
-                  <i class="fas fa-envelope"></i>
+                  View on GitHub <i class="fas fa-external-link-alt"></i>
                 </a>
-                <a href="tel:+919737612352" class="social-link" title="Phone">
-                  <i class="fas fa-phone"></i>
-                </a>
+              </div>
+            </div>
+            <div class="project-card fade-in">
+              <div class="project-header">
+                <h3 class="project-title">HR_Management_System</h3>
+              </div>
+              <div class="project-content">
+                <p class="project-description">
+                  DayFlow HRMS – A full-stack Human Resource Management System
+                  providing employee management, attendance tracking, leave
+                  management, payroll processing, and secure JWT-based
+                  authentication.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">Next.js</span>
+                  <span class="tech-tag">TypeScript</span>
+                  <span class="tech-tag">Supabase</span>
+                </div>
                 <a
-                  href="https://www.youtube.com/@LathiyaHarshal"
-                  class="social-link"
-                  title="YouTube"
+                  href="https://github.com/HarshalLathiya/odoo_hackathon_Human_Resource_Management_System.git"
+                  class="project-link"
                 >
-                  <i class="fab fa-youtube"></i>
+                  View on GitHub <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card fade-in">
+              <div class="project-header">
+                <h3 class="project-title">PixelCraft Portfolio</h3>
+              </div>
+              <div class="project-content">
+                <p class="project-description">
+                  This fully responsive site showcases my best shots in
+                  categorized galleries. The website serves as a creative
+                  portfolio and demonstrates both my technical web development
+                  skills and artistic photography work.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">Bootstrap</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <a
+                  href="https://github.com/HarshalLathiya/Bootstrap.git"
+                  class="project-link"
+                >
+                  View on GitHub <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card fade-in">
+              <div class="project-header">
+                <h3 class="project-title">QR Code Generator</h3>
+              </div>
+              <div class="project-content">
+                <p class="project-description">
+                  A dynamic QR code generation application built with Node.js
+                  that allows users to create custom QR codes for various
+                  purposes including URLs, text, and contact information.
+                </p>
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">React.js</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">Express.js</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">QR Library</span>
+                </div>
+                <a
+                  href="https://github.com/HarshalLathiya/QR_Code_Project_"
+                  class="project-link"
+                >
+                  View on GitHub <i class="fas fa-external-link-alt"></i>
                 </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <!-- Education Section -->
+      <section id="education" class="section education">
+        <div class="container">
+          <h2 class="section-title fade-in">Education</h2>
+          <div class="timeline">
+            <div class="timeline-item fade-in">
+              <h3 class="timeline-title">
+                🎓 Bachelor of Computer Applications (BCA)
+              </h3>
+              <h4 class="timeline-subtitle">
+                Kamani Science & Prataprai Arts College, Amreli – 6th Semester
+                (2025)
+              </h4>
+              <p class="timeline-description">
+                Currently pursuing a Bachelor of Computer Applications (BCA) at
+                Kamani Science & Prataprai Arts College, Amreli — affiliated
+                with Saurashtra University.<br />
+                Maintaining strong academic performance with 75%+ results and
+                continuously working on personal growth and technical
+                excellence.
+              </p>
+              <div class="tags-container">
+                <span class="tag">Web Development</span>
+                <span class="tag">App Development</span>
+                <span class="tag">Personal Growth</span>
+                <span class="tag">Continuous Learning</span>
+              </div>
+            </div>
+            <div class="timeline-item fade-in">
+              <h3 class="timeline-title">
+                📘 Higher Secondary Education (12th Science)
+              </h3>
+              <h4 class="timeline-subtitle">
+                Navnit School of Science, Amreli – GSHSEB (2022)
+              </h4>
+              <p class="timeline-description">
+                Completed 12th Science with 65%, building a strong foundation in
+                Mathematics, Physics, and Computer Science. JEE Score: 66.659 ·
+                Qualified JEE (NTA) with higher performance in Mathematics
+                (78.72) and Physics (73.11).
+              </p>
+              <div class="tags-container">
+                <span class="tag">Mathematics</span>
+                <span class="tag">Physics</span>
+                <span class="tag">Computer Science</span>
+                <span class="tag">JEE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Achievements Section -->
+      <section id="achievements" class="section achievements">
+        <div class="container">
+          <h2 class="section-title fade-in">Achievements &amp; Recognition</h2>
+          <div class="timeline">
+            <div class="timeline-item fade-in">
+              <h3 class="timeline-title">
+                <i class="fas fa-trophy"></i> Ranker & Achievement Felicitation
+                — Gajera Campus
+              </h3>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item fade-in">
+              <h3 class="timeline-title">
+                <i class="fas fa-certificate"></i>
+                Google Analytics Certification - Google
+              </h3>
+              <p class="timeline-description">
+                Certified by Google for mastering web analytics, traffic
+                insights, and performance measurement to improve digital
+                marketing strategies.
+              </p>
+              <div class="tags-container">
+                <span class="tag tag-accent">Google Analytics</span>
+                <span class="tag tag-accent">Web Analytics</span>
+                <span class="tag tag-accent">Data Analysis</span>
+              </div>
+            </div>
+            <div class="timeline-item fade-in">
+              <h3 class="timeline-title">
+                <i class="fas fa-trophy"></i> 2nd Rank – State-Level Photography
+                Competition - NYKS India
+              </h3>
+              <p class="timeline-description">
+                Secured 2nd position at a state-level photography contest for
+                outstanding creativity and technical excellence in visual
+                storytelling.
+              </p>
+              <div class="tags-container">
+                <span class="tag tag-accent">Photography</span>
+                <span class="tag tag-accent">Visual Arts</span>
+                <span class="tag tag-accent">Gandhinagar</span>
+              </div>
+            </div>
+            <div class="timeline-item fade-in">
+              <h3 class="timeline-title">
+                <i class="fas fa-certificate"></i>
+                Introduction to programming Using Python Certification —
+                Geeksforgeeks
+              </h3>
+              <p class="timeline-description">
+                Gained solid foundational knowledge of Python programming and
+                problem-solving techniques through GeeksforGeeks certification.
+              </p>
+              <div class="tags-container">
+                <span class="tag tag-accent">Python</span>
+                <span class="tag tag-accent">Basic Data Structures</span>
+                <span class="tag tag-accent">Algorithm Design</span>
+              </div>
+            </div>
+            <div class="timeline-item fade-in">
+              <h3 class="timeline-title">
+                <i class="fas fa-certificate"></i>
+                Java Skill Up - GeeksforGeeks
+              </h3>
+              <p class="timeline-description">
+                Gained solid foundational knowledge of Java programming and
+                problem-solving techniques through GeeksforGeeks certification.
+              </p>
+              <div class="tags-container">
+                <span class="tag tag-accent">Java</span>
+                <span class="tag tag-accent">Basic Data Structures</span>
+                <span class="tag tag-accent">JDBC</span>
+              </div>
+            </div>
+            <div class="timeline-item fade-in">
+              <h3 class="timeline-title">
+                <i class="fas fa-code"></i>
+                Participation in Code-2-Web - RK University
+              </h3>
+              <p class="timeline-description">
+                Showcased innovative web development skills and creativity at RK
+                University's TechnoPlanet 2025 event.
+              </p>
+              <div class="tags-container">
+                <span class="tag tag-accent">Web Development</span>
+                <span class="tag tag-accent">Competition</span>
+                <span class="tag tag-accent">Innovation</span>
+              </div>
+            </div>
+            <div class="timeline-item fade-in">
+              <h3 class="timeline-title">
+                <i class="fas fa-certificate"></i>
+                Spoken English Certification — Expert Spoken English
+              </h3>
+              <p class="timeline-description">
+                Successfully completed the Expert Spoken English course,
+                achieving strong fluency, confidence, and communication skills
+                in English.
+              </p>
+              <div class="tags-container">
+                <span class="tag tag-accent">Spoken English</span>
+                <span class="tag tag-accent">Active Listening</span>
+                <span class="tag tag-accent">Professional Communication</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo Gallery Slider -->
+          <div class="photo-gallery">
+            <h3 class="gallery-title fade-in">Moments of Achievement</h3>
+            <div class="slider-container">
+              <div class="slider">
+                <div class="slide">
+                  <img
+                    src="gallery/recent_awards.jpg"
+                    alt="Recent Awards"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="gallery/poster_presentation.jpg"
+                    alt="Poster Presentation"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="gallery/teachers_day_award.jpg"
+                    alt="Teachers Day Award"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="gallery/teachers_day.JPG"
+                    alt="Teachers Day"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="gallery/NYKS.jpg"
+                    alt="Photography Award"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="gallery/RED_WHITE.jpg"
+                    alt="Red White"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="slide">
+                  <video controls>
+                    <source
+                      src="gallery/teachers_day_SEM_5.MP4"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+              <button class="slider-btn prev-btn" id="prevBtn">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="slider-btn next-btn" id="nextBtn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+              <div class="slider-dots" id="sliderDots"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section id="contact" class="section contact">
+        <div class="container">
+          <h2 class="section-title fade-in" id="contact-title">Get In Touch</h2>
+          <div class="contact-content">
+            <div class="contact-form slide-in-left">
+              <form
+                id="contactForm"
+                action="https://formspree.io/f/xeopzvgq"
+                method="POST"
+              >
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Your message here..."
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                  <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+              </form>
+            </div>
+            <div class="contact-info slide-in-right">
+              <div>
+                <h3 class="contact-heading">Let's Connect!</h3>
+                <p class="contact-description">
+                  I'm always interested in new opportunities, collaborations,
+                  and interesting projects. Whether you have a question or just
+                  want to say hi, feel free to reach out!
+                </p>
+                <div class="social-links">
+                  <a
+                    href="https://github.com/HarshalLathiya"
+                    class="social-link"
+                    title="GitHub"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/harshal-lathiya-43b577258/"
+                    class="social-link"
+                    title="LinkedIn"
+                  >
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a
+                    href="mailto:harshalplathiya@gmail.com"
+                    class="social-link"
+                    title="Email"
+                  >
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                  <a href="tel:+919737612352" class="social-link" title="Phone">
+                    <i class="fas fa-phone"></i>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@LathiyaHarshal"
+                    class="social-link"
+                    title="YouTube"
+                  >
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="container">
-        <p id="footer-text">© 2026Harshal Lathiya. All rights reserved.</p>
+        <p id="footer-text">© 2026 Harshal Lathiya. All rights reserved.</p>
       </div>
     </footer>
     <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">
-      <i class="fas fa-arrow-up"></i>
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
     <script src="script.js"></script>
   </body>

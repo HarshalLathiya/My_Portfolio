@@ -595,7 +595,7 @@ function initPhotoSlider() {
     prevBtn.addEventListener("click", prevSlide);
 
     // Auto-play functionality
-    let autoPlayInterval = setInterval(nextSlide, 5000);
+    let autoPlayInterval = setInterval(nextSlide, 6000);
 
     // Pause auto-play on hover
     const sliderContainer = document.querySelector(".slider-container");
