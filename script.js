@@ -31,10 +31,10 @@ window.addEventListener('load', () => {
 });
 
 // ===== DARK MODE TOGGLE =====
-// Set dark mode as default
-document.documentElement.setAttribute('data-theme', 'dark');
-localStorage.setItem('theme', 'dark');
-updateDarkModeIcon(true);
+// Set light mode as default
+document.documentElement.removeAttribute('data-theme');
+localStorage.setItem('theme', 'light');
+updateDarkModeIcon(false);
 
 darkModeToggle.addEventListener('click', () => {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
