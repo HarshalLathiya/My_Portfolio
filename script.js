@@ -209,8 +209,8 @@ function createParticles() {
 // ===== TYPING EFFECT =====
 function initTypingEffect() {
     const taglines = [
-        "IT Student | Freelance Developer",
-        "Full-Stack Developer",
+        "IT Student | Full-Stack Developer",
+        "Freelance Developer",
         "Tech Enthusiast",
         "Continuous Learner"
     ];
