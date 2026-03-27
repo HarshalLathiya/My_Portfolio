@@ -463,88 +463,62 @@ function initHeroNameEffect() {
     });
 }
 
-// ===== MOBILE NAVIGATION MENU =====
 function initMobileMenu() {
     const navContainer = document.querySelector('.nav-container');
     const navMenu = document.querySelector('.nav-menu');
+    const navRight = document.querySelector('.nav-right');
 
-    if (window.innerWidth <= 768 && !document.querySelector('.hamburger')) {
-        const hamburger = document.createElement('button');
+    if (!navContainer || !navMenu || !navRight) return;
+
+    let hamburger = document.querySelector('.hamburger');
+
+    // Create hamburger only once
+    if (!hamburger && window.innerWidth <= 768) {
+        hamburger = document.createElement('button');
         hamburger.className = 'hamburger';
         hamburger.innerHTML = '<i class="fas fa-bars"></i>';
         hamburger.setAttribute('aria-label', 'Toggle navigation menu');
 
-        hamburger.style.cssText = `
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            transition: var(--transition);
-        `;
-
-        const navRight = document.querySelector('.nav-right');
         navContainer.insertBefore(hamburger, navRight);
-
-        navMenu.style.cssText = `
-            position: fixed;
-            top: var(--header-height);
-            left: 0;
-            width: 100%;
-            background: var(--bg-color);
-            flex-direction: column;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-100%);
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            z-index: 999;
-        `;
-
-        let isMenuOpen = false;
-
-        hamburger.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-
-            if (isMenuOpen) {
-                navMenu.style.transform = 'translateY(0)';
-                navMenu.style.opacity = '1';
-                hamburger.innerHTML = '<i class="fas fa-times"></i>';
-                document.body.style.overflow = 'hidden';
-            } else {
-                navMenu.style.transform = 'translateY(-100%)';
-                navMenu.style.opacity = '0';
-                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-                document.body.style.overflow = '';
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.style.transform = 'translateY(-100%)';
-                navMenu.style.opacity = '0';
-                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-                document.body.style.overflow = '';
-                isMenuOpen = false;
-            });
-        });
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navMenu.style.cssText = '';
-                hamburger.remove();
-                document.body.style.overflow = '';
-            }
-        });
     }
-}
 
+    if (!hamburger) return;
+
+    // Toggle menu
+    hamburger.onclick = () => {
+        navMenu.classList.toggle('active');
+
+        const isOpen = navMenu.classList.contains('active');
+
+        hamburger.innerHTML = isOpen
+            ? '<i class="fas fa-times"></i>'
+            : '<i class="fas fa-bars"></i>';
+
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    // Close on link click
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.onclick = () => {
+            navMenu.classList.remove('active');
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            document.body.style.overflow = '';
+        };
+    });
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+
+            if (hamburger) {
+                hamburger.remove();
+                hamburger = null;
+            }
+        }
+    });
+}
 // ===== PHOTO GALLERY SLIDER =====
 function initPhotoSlider() {
     const slider = document.querySelector(".slider");

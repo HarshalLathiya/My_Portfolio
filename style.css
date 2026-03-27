@@ -1049,7 +1049,27 @@ html:not([data-theme]) .project-card {
 
 @media (max-width: 768px) {
   .nav-menu {
-    display: none;
+    display: flex; /* IMPORTANT */
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    flex-direction: column;
+    padding: 2rem;
+
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .section-title {
@@ -1437,7 +1457,7 @@ html:not([data-theme]) .project-card {
   }
 
   .dot {
-    min-width: 5x;
+    min-width: 5px;
     min-height: 5px;
     margin: 0 2px;
   }
