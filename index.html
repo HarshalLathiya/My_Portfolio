@@ -37,6 +37,9 @@
   <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
@@ -211,7 +214,7 @@
     <!-- Skills Section -->
     <section id="skills" class="section skills">
       <div class="container">
-        <h2 class="section-title fade-in">Skills &amp; Technologies</h2>
+        <h2 class="section-title fade-in">Skills & Technologies</h2>
         <div class="skills-grid">
           <div class="skill-category fade-in">
             <h3><i class="fas fa-code"></i> Frontend</h3>
@@ -512,138 +515,223 @@
     <!-- Achievements Section -->
     <section id="achievements" class="section achievements">
       <div class="container">
-        <h2 class="section-title fade-in">Achievements &amp; Recognition</h2>
+        <h2 class="section-title fade-in">Achievements & Recognition</h2>
 
-        <div class="timeline">
+        <!-- Certificate Horizontal Slider -->
+        <div class="certificate-slider-container">
+          <div class="swiper certificate-gallery" role="region" aria-label="Certificate gallery carousel">
+            <div class="swiper-wrapper">
 
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Introduction to Generative AI — Google Cloud Skills Boost
-            </h3>
-            <p class="timeline-description">
-              Learned the fundamentals of Generative AI, large language models,
-              and AI-powered tools through Google Cloud Skills Boost certification.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Generative AI</span>
-              <span class="tag tag-accent">AI Tools</span>
-              <span class="tag tag-accent">Google Cloud</span>
+              <!-- Certificate Card 1 -->
+              <article class="swiper-slide certificate-card" role="group" aria-label="Slide 1 of 9"
+                data-category="fullstack bootcamp"
+                data-verification-url="https://..."
+                data-description="Completed an intensive Full-Stack Bootcamp covering frontend and backend technologies, databases, and deployment.">
+                <div class="certificate-image-wrapper">
+                  <img
+                    src="gallery/certificates/Full-Stack_Bootcamp.png"
+                    alt="Full-Stack Bootcamp certificate thumbnail"
+                    class="certificate-thumbnail"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="certificate-info">
+                  <h3 class="certificate-title">Full-Stack Bootcamp</h3>
+                  <p class="certificate-org">Full-Stack Bootcamp</p>
+                  <button class="certificate-details-btn" aria-label="View details for Full-Stack Bootcamp certificate">
+                    View Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </article>
+
+              <!-- Certificate Card 2 -->
+              <article class="swiper-slide certificate-card" role="group" aria-label="Slide 2 of 9"
+                data-category="ai cloud"
+                data-verification-url="https://www.skills.google/public_profiles/e3764201-cac4-418f-86bd-7bc91c14f66c/badges/24228683?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share"
+                data-description="Learned the fundamentals of Generative AI, large language models, and AI-powered tools through Google Cloud Skills Boost certification.">
+                <div class="certificate-image-wrapper">
+                  <img
+                    src="gallery/certificates/generative-ai-google.png"
+                    alt="Introduction to Generative AI — Google Cloud Skills Boost certificate thumbnail"
+                    class="certificate-thumbnail"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="certificate-info">
+                  <h3 class="certificate-title">Introduction to Generative AI</h3>
+                  <p class="certificate-org">Google Cloud Skills Boost</p>
+                  <button class="certificate-details-btn" aria-label="View details for Introduction to Generative AI certificate">
+                    View Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </article>
+
+              <!-- Certificate Card 3 -->
+              <article class="swiper-slide certificate-card" role="group" aria-label="Slide 3 of 9"
+                data-category="cloud"
+                data-verification-url="https://www.simplilearn.com/..."
+                data-description="Acquired foundational knowledge of cloud computing concepts, deployment models, cloud services, and modern cloud infrastructure.">
+                <div class="certificate-image-wrapper">
+                  <img
+                    src="gallery/certificates/cloud-computing-simplilearn.png"
+                    alt="Introduction to Cloud Computing — Simplilearn certificate thumbnail"
+                    class="certificate-thumbnail"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="certificate-info">
+                  <h3 class="certificate-title">Introduction to Cloud Computing</h3>
+                  <p class="certificate-org">Simplilearn</p>
+                  <button class="certificate-details-btn" aria-label="View details for Introduction to Cloud Computing certificate">
+                    View Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </article>
+
+              <!-- Certificate Card 4 -->
+              <article class="swiper-slide certificate-card" role="group" aria-label="Slide 4 of 9"
+                data-category="analytics marketing"
+                data-verification-url="https://skillshop.credential.net/2cd0674c-2ec3-41b0-b016-be88bb6f0dc4#acc.bF0h1Ojs"
+                data-description="Certified by Google for mastering web analytics, traffic insights, and performance measurement to improve digital marketing strategies.">
+                <div class="certificate-image-wrapper">
+                  <img
+                    src="gallery/certificates/google-analytics.png"
+                    alt="Google Analytics Certification — Google Digital Academy certificate thumbnail"
+                    class="certificate-thumbnail"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="certificate-info">
+                  <h3 class="certificate-title">Google Analytics Certification</h3>
+                  <p class="certificate-org">Google Digital Academy (Skillshop)</p>
+                  <button class="certificate-details-btn" aria-label="View details for Google Analytics Certification certificate">
+                    View Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </article>
+
+              <!-- Certificate Card 5 -->
+              <article class="swiper-slide certificate-card" role="group" aria-label="Slide 5 of 9"
+                data-category="programming python"
+                data-verification-url="https://drive.google.com/file/d/1G5JB8Xh_g-Se3G47mRrOtswmru5o49nM/view?usp=drive_link"
+                data-description="Gained solid foundational knowledge of Python programming and problem-solving techniques through GeeksforGeeks certification.">
+                <div class="certificate-image-wrapper">
+                  <img
+                    src="gallery/certificates/python-geeksforgeeks.png"
+                    alt="Introduction to Programming Using Python — GeeksforGeeks certificate thumbnail"
+                    class="certificate-thumbnail"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="certificate-info">
+                  <h3 class="certificate-title">Introduction to Programming Using Python</h3>
+                  <p class="certificate-org">GeeksforGeeks</p>
+                  <button class="certificate-details-btn" aria-label="View details for Introduction to Programming Using Python certificate">
+                    View Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </article>
+
+              <!-- Certificate Card 6 -->
+              <article class="swiper-slide certificate-card" role="group" aria-label="Slide 6 of 9"
+                data-category="programming java"
+                data-verification-url="https://drive.google.com/file/d/1mTjmxsFoJVqGtwy0pxfLy9ysUzqmndXj/view?usp=drive_link"
+                data-description="Developed strong foundational knowledge of Java programming, object-oriented concepts, and problem-solving techniques.">
+                <div class="certificate-image-wrapper">
+                  <img
+                    src="gallery/certificates/java-geeksforgeeks.png"
+                    alt="Java Skill Up — GeeksforGeeks certificate thumbnail"
+                    class="certificate-thumbnail"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="certificate-info">
+                  <h3 class="certificate-title">Java Skill Up</h3>
+                  <p class="certificate-org">GeeksforGeeks</p>
+                  <button class="certificate-details-btn" aria-label="View details for Java Skill Up certificate">
+                    View Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </article>
+
+              <!-- Certificate Card 7 -->
+              <article class="swiper-slide certificate-card" role="group" aria-label="Slide 7 of 9"
+                data-category="programming c"
+                data-verification-url="https://drive.google.com/file/d/1FOi-jOk-D9qpNwTMV_rwsxS8AG_nXA06/view?usp=drive_link"
+                data-description="Built strong fundamentals of C programming, structured programming, and logical problem-solving through GeeksforGeeks certification.">
+                <div class="certificate-image-wrapper">
+                  <img
+                    src="gallery/certificates/c-geeksforgeeks.png"
+                    alt="C Skill Up — GeeksforGeeks certificate thumbnail"
+                    class="certificate-thumbnail"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="certificate-info">
+                  <h3 class="certificate-title">C Skill Up</h3>
+                  <p class="certificate-org">GeeksforGeeks</p>
+                  <button class="certificate-details-btn" aria-label="View details for C Skill Up certificate">
+                    View Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </article>
+
+              <!-- Certificate Card 8 -->
+              <article class="swiper-slide certificate-card" role="group" aria-label="Slide 8 of 9"
+                data-category="communication"
+                data-verification-url="https://drive.google.com/file/d/1l6PG9TbwlrcveYPlpI78yrj_jTkN1DZT/view?usp=drive_link"
+                data-description="Successfully completed spoken English training with strong fluency, communication skills, and professional confidence in English.">
+                <div class="certificate-image-wrapper">
+                  <img
+                    src="gallery/certificates/spoken-english.png"
+                    alt="Spoken English Certification — Expert Spoken English certificate thumbnail"
+                    class="certificate-thumbnail"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="certificate-info">
+                  <h3 class="certificate-title">Spoken English Certification</h3>
+                  <p class="certificate-org">Expert Spoken English</p>
+                  <button class="certificate-details-btn" aria-label="View details for Spoken English Certification certificate">
+                    View Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </article>
+
+              <!-- Certificate Card 9 -->
+              <article class="swiper-slide certificate-card" role="group" aria-label="Slide 9 of 9"
+                data-category="photography award"
+                data-verification-url="https://drive.google.com/file/d/1qvrjZ6OtF7EGSVJT1Ma-fGaf2G9jQVgB/view?usp=drive_link"
+                data-description="Received recognition in a state-level photography competition for creativity, technical excellence, and visual storytelling skills.">
+                <div class="certificate-image-wrapper">
+                  <img
+                    src="gallery/certificates/nyks-photography-award.png"
+                    alt="State Photography Award — NYKS India certificate thumbnail"
+                    class="certificate-thumbnail"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="certificate-info">
+                  <h3 class="certificate-title">State Photography Award</h3>
+                  <p class="certificate-org">NYKS India</p>
+                  <button class="certificate-details-btn" aria-label="View details for State Photography Award certificate">
+                    View Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </article>
+
             </div>
           </div>
 
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Introduction to Cloud Computing — Simplilearn
-            </h3>
-            <p class="timeline-description">
-              Acquired foundational knowledge of cloud computing concepts,
-              deployment models, cloud services, and modern cloud infrastructure.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Cloud Computing</span>
-              <span class="tag tag-accent">Cloud Services</span>
-              <span class="tag tag-accent">Infrastructure</span>
-            </div>
-          </div>
+          <!-- Swiper Navigation -->
+          <button class="swiper-button-prev certificate-slider-btn" aria-label="Previous certificates">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="swiper-button-next certificate-slider-btn" aria-label="Next certificates">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
 
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Google Analytics Certification — Google Digital Academy (Skillshop)
-            </h3>
-            <p class="timeline-description">
-              Certified by Google for mastering web analytics, traffic insights,
-              and performance measurement to improve digital marketing strategies.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Google Analytics</span>
-              <span class="tag tag-accent">Web Analytics</span>
-              <span class="tag tag-accent">Data Analysis</span>
-            </div>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Introduction to Programming Using Python — GeeksforGeeks
-            </h3>
-            <p class="timeline-description">
-              Gained solid foundational knowledge of Python programming and
-              problem-solving techniques through GeeksforGeeks certification.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Python</span>
-              <span class="tag tag-accent">Problem Solving</span>
-              <span class="tag tag-accent">Programming Fundamentals</span>
-            </div>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Java Skill Up — GeeksforGeeks
-            </h3>
-            <p class="timeline-description">
-              Developed strong foundational knowledge of Java programming,
-              object-oriented concepts, and problem-solving techniques.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Java</span>
-              <span class="tag tag-accent">OOP</span>
-              <span class="tag tag-accent">JDBC</span>
-            </div>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              C Skill Up — GeeksforGeeks
-            </h3>
-            <p class="timeline-description">
-              Built strong fundamentals of C programming, structured programming,
-              and logical problem-solving through GeeksforGeeks certification.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">C Programming</span>
-              <span class="tag tag-accent">Programming Logic</span>
-              <span class="tag tag-accent">Problem Solving</span>
-            </div>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-certificate"></i>
-              Spoken English Certification — Expert Spoken English
-            </h3>
-            <p class="timeline-description">
-              Successfully completed spoken English training with strong fluency,
-              communication skills, and professional confidence in English.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Spoken English</span>
-              <span class="tag tag-accent">Communication</span>
-              <span class="tag tag-accent">Professional Skills</span>
-            </div>
-          </div>
-
-          <div class="timeline-item fade-in">
-            <h3 class="timeline-title">
-              <i class="fas fa-trophy"></i>
-              State Photography Award — NYKS India
-            </h3>
-            <p class="timeline-description">
-              Received recognition in a state-level photography competition for
-              creativity, technical excellence, and visual storytelling skills.
-            </p>
-            <div class="tags-container">
-              <span class="tag tag-accent">Photography</span>
-              <span class="tag tag-accent">Creativity</span>
-              <span class="tag tag-accent">Visual Storytelling</span>
-            </div>
-          </div>
-
+          <div class="swiper-pagination certificate-pagination" aria-hidden="true"></div>
         </div>
       </div>
 
@@ -686,6 +774,28 @@
           <div class="slider-dots" id="sliderDots"></div>
         </div>
       </div>
+
+      <!-- Certificate Details Modal -->
+      <div class="certificate-modal" id="certificateModal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="certificate-modal-overlay"></div>
+        <div class="certificate-modal-content">
+          <button class="certificate-modal-close" aria-label="Close details modal">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+          <div class="certificate-modal-body">
+            <div class="certificate-modal-image-wrapper">
+              <img src="" alt="" class="certificate-modal-image" id="modalImage" />
+            </div>
+            <div class="certificate-modal-details">
+              <h3 class="certificate-modal-title" id="modalTitle"></h3>
+              <p class="certificate-modal-org" id="modalOrg"></p>
+              <p class="certificate-modal-description" id="modalDescription"></p>
+              <a href="#" class="certificate-modal-verify" id="modalVerifyLink" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt" aria-hidden="true"></i> Verify Certificate
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Contact Section -->
@@ -754,6 +864,9 @@
   <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
     <i class="fas fa-arrow-up" aria-hidden="true"></i>
   </button>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 

@@ -591,6 +591,147 @@ function initPhotoSlider() {
     });
 }
 
+// ===== CERTIFICATE DETAILS MODAL =====
+function initCertificateModal() {
+    const modal = document.getElementById('certificateModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalOrg = document.getElementById('modalOrg');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalVerify = document.getElementById('modalVerifyLink');
+    const closeBtn = modal.querySelector('.certificate-modal-close');
+    const overlay = modal.querySelector('.certificate-modal-overlay');
+
+    if (!modal) return;
+
+    // Open modal on any "View Details" button click
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.certificate-details-btn');
+        if (!btn) return;
+
+        const card = btn.closest('.certificate-card');
+        if (!card) return;
+
+        const img = card.querySelector('.certificate-thumbnail');
+        const title = card.querySelector('.certificate-title');
+        const org = card.querySelector('.certificate-org');
+        const description = card.dataset.description || '';
+        const verifyUrl = card.dataset.verificationUrl || '#';
+
+        modalImage.src = img ? img.src : '';
+        modalImage.alt = img ? img.alt : 'Certificate';
+        modalTitle.textContent = title ? title.textContent : '';
+        modalOrg.textContent = org ? org.textContent : '';
+        modalDescription.textContent = description;
+        modalVerify.href = verifyUrl;
+
+        // Hide verify link if no real URL
+        if (!verifyUrl || verifyUrl === '#' || verifyUrl === 'https://...') {
+            modalVerify.style.display = 'none';
+        } else {
+            modalVerify.style.display = 'inline-flex';
+        }
+
+        // Show modal
+        modal.removeAttribute('hidden');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Close functions
+    function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+            closeModal();
+        }
+    });
+}
+
+// ===== CERTIFICATE SWIPER SLIDER =====
+function initCertificateSlider() {
+    const certificateSwiperEl = document.querySelector('.certificate-gallery');
+    if (!certificateSwiperEl || typeof Swiper === 'undefined') return;
+
+    const swiper = new Swiper(certificateSwiperEl, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 500,
+        grabCursor: true,
+        watchSlidesProgress: true,
+        slideVisibleClass: 'swiper-slide-visible',
+        slideActiveClass: 'swiper-slide-active',
+
+        // Responsive breakpoints
+        breakpoints: {
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 22
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 24
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 28
+            }
+        },
+
+        // Navigation
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            disabledClass: 'swiper-button-disabled'
+        },
+
+        // Pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: false,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active'
+        },
+
+        // No autoplay, no loop
+        autoplay: false,
+        loop: false,
+
+        // Keyboard navigation
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true
+        },
+
+        // Touch
+        touchRatio: 1,
+        touchAngle: 45,
+        simulateTouch: true,
+
+        // Performance
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 2
+        }
+    });
+
+    return swiper;
+}
+
 // ===== INITIALIZE EVERYTHING =====
 document.addEventListener('DOMContentLoaded', () => {
     createParticles();
@@ -601,6 +742,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroNameEffect();
     initMobileMenu();
     initPhotoSlider();
+    initCertificateSlider();
+    initCertificateModal();
 
     console.log('%c🚀 Harshal Lathiya Portfolio', 'color: #2563eb; font-size: 18px; font-weight: bold;');
     console.log('%cThanks for checking out my portfolio!', 'color: #6b7280;');
