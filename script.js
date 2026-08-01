@@ -209,8 +209,8 @@ function createParticles() {
 // ===== TYPING EFFECT =====
 function initTypingEffect() {
     const taglines = [
-        "IT Student | Full-Stack Developer",
-        "Freelance Developer",
+        "MCA Student",
+        "Freelance Full Stack Developer",
         "Tech Enthusiast",
         "Continuous Learner"
     ];
@@ -422,6 +422,73 @@ function initProjectCards() {
                 setTimeout(() => overlay.remove(), 300);
             }
         });
+    });
+}
+
+// ===== PROJECT TECH TAG OVERFLOW HANDLING =====
+function initProjectTechOverflow() {
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+        const techContainer = card.querySelector('.project-tech');
+        if (!techContainer) return;
+
+        const tags = Array.from(techContainer.querySelectorAll('.tech-tag'));
+        if (tags.length === 0) return;
+
+        // Function to check and hide overflow tags
+        const checkOverflow = () => {
+            // Reset all tags to visible first
+            tags.forEach(tag => {
+                tag.style.display = '';
+            });
+
+            // Remove any existing "+X More" indicator
+            const existingMore = techContainer.querySelector('.tech-tag-more');
+            if (existingMore) {
+                existingMore.remove();
+            }
+
+            // Check if content overflows the fixed height
+            if (techContainer.scrollHeight > techContainer.clientHeight) {
+                let hiddenCount = 0;
+
+                // Hide tags from the end until content fits
+                for (let i = tags.length - 1; i >= 0; i--) {
+                    tags[i].style.display = 'none';
+                    hiddenCount++;
+
+                    // Re-check after hiding
+                    if (techContainer.scrollHeight <= techContainer.clientHeight) {
+                        // Add "+X More" indicator
+                        const moreIndicator = document.createElement('span');
+                        moreIndicator.className = 'tech-tag-more';
+                        moreIndicator.textContent = `+${hiddenCount} More`;
+                        moreIndicator.setAttribute('aria-label', `${hiddenCount} more technologies`);
+                        techContainer.appendChild(moreIndicator);
+
+                        // If the indicator itself causes overflow, hide one more tag
+                        if (techContainer.scrollHeight > techContainer.clientHeight) {
+                            // Find the last visible tag and hide it
+                            for (let j = tags.length - 1; j >= 0; j--) {
+                                if (tags[j].style.display !== 'none') {
+                                    tags[j].style.display = 'none';
+                                    hiddenCount++;
+                                    moreIndicator.textContent = `+${hiddenCount} More`;
+                                    moreIndicator.setAttribute('aria-label', `${hiddenCount} more technologies`);
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+        };
+
+        // Run on load and on resize
+        checkOverflow();
+        window.addEventListener('resize', checkOverflow);
     });
 }
 
@@ -656,6 +723,82 @@ function initCertificateModal() {
     });
 }
 
+// ===== PROJECTS SWIPER SLIDER =====
+function initProjectsSlider() {
+    const projectsSwiperEl = document.querySelector('.projects-gallery');
+    if (!projectsSwiperEl || typeof Swiper === 'undefined') return;
+
+    const swiper = new Swiper(projectsSwiperEl, {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        speed: 500,
+        grabCursor: true,
+        watchSlidesProgress: true,
+        slideVisibleClass: 'swiper-slide-visible',
+        slideActiveClass: 'swiper-slide-active',
+
+        // Responsive breakpoints
+        breakpoints: {
+            480: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 22
+            },
+            992: {
+                slidesPerView: 2,
+                spaceBetween: 24
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 28
+            }
+        },
+
+        // Navigation
+        navigation: {
+            nextEl: '.projects-slider-btn.swiper-button-next',
+            prevEl: '.projects-slider-btn.swiper-button-prev',
+            disabledClass: 'swiper-button-disabled'
+        },
+
+        // Pagination
+        pagination: {
+            el: '.projects-pagination',
+            clickable: true,
+            dynamicBullets: false,
+            bulletClass: 'swiper-pagination-bullet',
+            bulletActiveClass: 'swiper-pagination-bullet-active'
+        },
+
+        // No autoplay, no loop
+        autoplay: false,
+        loop: false,
+
+        // Keyboard navigation
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true
+        },
+
+        // Touch
+        touchRatio: 1,
+        touchAngle: 45,
+        simulateTouch: true,
+
+        // Performance
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 2
+        }
+    });
+
+    return swiper;
+}
+
 // ===== CERTIFICATE SWIPER SLIDER =====
 function initCertificateSlider() {
     const certificateSwiperEl = document.querySelector('.certificate-gallery');
@@ -738,10 +881,12 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypingEffect();
     animateSkills();
     initProjectCards();
+    initProjectTechOverflow();
     updateCopyrightYear();
     initHeroNameEffect();
     initMobileMenu();
     initPhotoSlider();
+    initProjectsSlider();
     initCertificateSlider();
     initCertificateModal();
 
@@ -756,6 +901,7 @@ window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
         initMobileMenu();
+        initProjectTechOverflow();
     }, 250);
 });
 
